@@ -70,6 +70,7 @@ export class SkillsComponent implements OnInit {
   //     this.resetForm(form);
   //     this.toastr.success('Skills updated successfully');
   // } 
+  //name
   }
  
 }
