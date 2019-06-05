@@ -1,0 +1,34 @@
+<div class="container-fluid container-login">
+    <div class="dashboard-header">
+        <a class="navbar-brand text-uppercase" routerLink="/home">{{dashboard}}</a>
+    </div>
+    <div class="row">
+      <div class="form-wrapper text-center">
+        <h2>Member Register </h2>
+        <form  autocomplete="off" (ngSubmit)="onRegister(f)" #f="ngForm">
+            <div class="form-group position-relative">
+              <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" #name="ngModel" required="required" ngModel>
+              <span class="alert custom-alert alert-danger" *ngIf="name.touched && !name.dirty"><i class="fas fa-exclamation-triangle"></i> Please enter Name <i class="fas fa-times"></i></span>
+            </div>
+          <div class="form-group position-relative">
+            <input type="email" class="form-control" id="email"  placeholder="Enter email" name="email" required="required" email="true" #email="ngModel" autocomplete="false" ngModel>
+            <span class="alert custom-alert alert-danger" *ngIf="email.touched && !email.dirty"><i class="fas fa-exclamation-triangle"></i> Please enter Email <i class="fas fa-times"></i></span>
+            <span class="alert custom-alert alert-danger" *ngIf="!email.valid && email.dirty && email.touched"><i class="fas fa-exclamation-triangle"></i> Please enter valid Email <i class="fas fa-times"></i></span>
+            <span class="alert custom-alert alert-danger" *ngIf="errorMessage">{{errorMessage}} <i class="fas fa-times"></i></span>
+          </div>
+          <div class="form-group position-relative">
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" minlength="6" #password="ngModel" required="required" autocomplete="off" ngModel>
+            <span class="alert custom-alert alert-danger" *ngIf="password.touched && !password.dirty"><i class="fas fa-exclamation-triangle"></i> Please enter Password <i class="fas fa-times"></i></span>
+            <span class="alert custom-alert alert-danger" *ngIf="!password.valid && password.dirty && password.touched"><i class="fas fa-exclamation-triangle"></i>Password must greater than 6 digit <i class="fas fa-times"></i></span>
+           </div>
+           <div class="form-group position-relative text-left cursor-pointer">
+              <input type="file" class="form-control d-none" id="user-icon" placeholder="User icon" name="user_icon" #user_icon="ngModel" (change)="onFileSelected($event)" required="required" autocomplete="off" ngModel #userIcon>
+              <div class="upload-image form-control" (click)="userIcon.click()"><span>Drag and Drop...</span> <a class="btn btn-primary border-radius-half text-uppercase float-right cursor-pointer"><i class="fas fa-cloud-upload-alt"></i>Upload</a></div>
+              <span class="alert custom-alert alert-danger" *ngIf="user_icon.touched && !user_icon.dirty"><i class="fas fa-exclamation-triangle"></i> Please Select your icon <i class="fas fa-times"></i></span>
+            </div>
+          <button type="submit" class="btn btn-primary btn-block border-radius-half" [disabled]="f.invalid">Register</button>
+          <div class="register-link"><a routerLink="/login" class="text-decoration-none">Have Account? Login <i class="fas fa-long-arrow-alt-right"></i></a></div>
+        </form>
+      </div>
+  </div>
+</div>

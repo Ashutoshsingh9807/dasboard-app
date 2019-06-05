@@ -1,0 +1,33 @@
+.full-width-table {
+  width: 100%;
+}
+.mat-elevation-z8 {
+  box-shadow: none;
+}
+.mat-elevation-z8.add_goals_notes .sections-shaow {
+  margin-bottom: 30px;
+}
+.mat-elevation-z8.add_goals_notes .sections-shaow .mat-paginator {
+  background-color: transparent;
+}
+.add_goals_notes .mat-header-cell {
+  font-size: 1rem;
+  color: #212529;
+  padding: 0.75rem;
+}
+.add_goals_notes tr.mat-header-row {
+  height: auto;
+  background: transparent;
+}
+.add_goals_notes tr.mat-footer-row, .add_goals_notes tr.mat-row {
+  height: auto;
+}
+.add_goals_notes td.mat-cell:first-of-type, .add_goals_notes td.mat-footer-cell:first-of-type, .add_goals_notes th.mat-header-cell:first-of-type, .add_goals_notes td.mat-cell, .add_goals_notes td.mat-footer-cell, .add_goals_notes th.mat-header-cell {
+  padding: 0.75rem;
+}
+.subject-row {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  max-width: 400px;
+}

@@ -1,0 +1,7 @@
+<ul class="navbar-nav d-block skill-list" *ngIf="usersskill">
+    <li class="nav-item d-inline">
+      <a (click)="onEdit(skill)" class="btn">{{usersskill.skillName}}</a>
+      <a class="skill_delete" (click)="onDelete(skill.id)"><i class="fas fa-trash-alt"></i></a> 
+    </li>
+    
+  </ul>

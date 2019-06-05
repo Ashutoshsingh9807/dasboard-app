@@ -1,0 +1,10 @@
+footer {
+    padding: 20px;
+    background-color: #eeee;
+    color: #444;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    position: absolute;
+    bottom: 0px;
+    width: calc(100% - 30px);
+} 

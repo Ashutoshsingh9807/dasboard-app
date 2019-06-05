@@ -1,0 +1,94 @@
+.sidebar {
+    position: fixed;
+    height: calc(100% - 76.8px);
+    top: 76.8px;
+    overflow-y: auto;
+    box-shadow: 0 8px 20px 7px rgba(0,0,0,.06), 0 1px 4px rgba(0,0,0,.08);
+    width: 250px;
+    transition: all .24s ease-in-out;
+    left: -250px;
+}
+.sidebar-show {
+    left: 0px;
+}
+.sidebar-menu {
+    padding-left: 0px;
+    list-style: none;
+}
+.sidebar-menu a {
+    padding: 7px 10px 7px 20px;
+    color: #444;
+    text-decoration: none;
+    display: block;
+}
+.sidebar nav {
+    padding: 0px;
+}
+.sidebar .navbar>.sidebar-menu>.nav-item {
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+}
+.sidebar .navbar .sidebar-menu .nav-item .dropdown-menu li a {
+    padding: 5px 5px 5px 28px;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 14px;
+}
+.sidebar .navbar .sidebar-menu .nav-item .dropdown-menu li:last-of-type a {
+    border-bottom: 0px;
+}
+.sidebar .navbar-nav .dropdown-menu {
+    height: 0px;
+    border-radius: 0px;
+    border:0px;
+    border-top: 1px solid #444;
+    padding: 0px;
+}
+.sidebar .navbar-nav .dropdown.show .dropdown-menu {
+    transition: all 1s ease-in;
+    height: auto;
+}
+.toogle-sign {
+    float: right;
+    height: 29px;
+    position: relative;
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+    width: 29px;
+}
+.toogle-sign::before, .toogle-sign::after {
+    content: "";
+    border-radius: 2px;
+    display: block;
+    width: 57%;
+    height: 12%;
+    position: absolute;
+    top: 37%;
+    right: 0;
+    transition: .3s;
+    background: black;
+}
+.toogle-sign::after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.sidebar .navbar-nav .dropdown.show > div > a i.toogle-sign::before {
+    -webkit-transform: rotate(180deg) translate(0, 0);
+    transform: rotate(180deg) translate(0, 0);
+    width: 50%;
+}
+.sidebar .navbar-nav .dropdown.show > div > a i.toogle-sign::after {
+    -webkit-transform: rotate(-180deg) translate(0%, 0);
+    transform: rotate(-180deg) translate(0%, 0);
+    width: 50%;
+}
+
+
+/*datepicker css here */
+.datePicker-sidebar {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 0px;
+    box-shadow: 0px -1px 20px #ccc;
+    margin-bottom: 13px;
+}

@@ -1,0 +1,135 @@
+<header>
+  <div class="container-fluid">
+    <div class="row">
+     <!-- A grey horizontal navbar that becomes vertical on small screens -->
+      <nav class="navbar navbar-expand-sm full-width">
+        <a class="navbar-brand text-uppercase cursor-pointer" routerLink="/home">{{dashboard}}</a>
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link hamburger" (click)="toggle_sidebar()"><i class="fas fa-bars"></i></a>
+          </li>
+          
+        </ul>
+        <div class="right-section form-inline">
+          <form class="form-inline" action="/action_page.php">
+            <div class="search-bar" (click)="toggle_searchbar()">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <i class="fab fa-searchengin"></i>
+            </div>
+          </form>
+          <nav class="navbar navbar-expand-sm">
+            <ul class="navbar-nav">
+              <li class="nav-item notification-main">
+                <div class="dropdown" appDropdown>
+                    <a class="nav-link notification dropdown-toggle">
+                        <i class="far fa-bell"> <span class="notification-count">2</span></i>
+                      </a>
+                    <div class="dropdown-menu dropDown-notificaion">
+                        <div class="notification-wrapper dropdown-item">
+                            
+                            <div class="notification-icon">
+                              <i class="far fa-comment"></i>
+                            </div>
+                            <div class="notification-content">
+                              <div class="notification-to">
+                                Company
+                              </div>
+                              <div class="notification-top">
+                                New message <span class="badge badge-pill badge-primary">New</span> <span class="notification-time">1 hrs ago</span>
+                              </div>
+                              <div class="notification-message">
+                                  Debasish Das Memorial IT Quiz (DDM IT QUIZ)- 2019
+                              </div> 
+                            </div>
+                          
+                        </div>
+                        
+                        <div class="notification-wrapper dropdown-item">
+                            
+                            <div class="notification-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-to">
+                                    Bhubaneswar
+                                  </div>
+                              <div class="notification-top">
+                                New message <span class="badge badge-pill badge-info">New</span> <span class="notification-time">2 days ago</span>
+                              </div>
+                              <div class="notification-message">
+                                Happy Republic Day !
+                              </div>
+                            </div>
+                          
+                        </div>
+                        <div class="notification-wrapper dropdown-item">
+                            
+                            <div class="notification-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-to">
+                                    Team:Amitabh
+                                  </div>
+                              <div class="notification-top">
+                                New message <span class="badge badge-pill badge-success">New</span> <span class="notification-time">20 min ago</span>
+                              </div>
+                              <div class="notification-message">
+                                  Mail server issue
+                              </div>
+                            </div>
+                          
+                        </div>
+                        <div class="notification-wrapper dropdown-item">
+                            
+                            <div class="notification-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-to">
+                                    Noida
+                                  </div>
+                              <div class="notification-top">
+                                New message <span class="badge badge-pill badge-info">New</span> <span class="notification-time">1 min ago</span>
+                              </div>
+                              <div class="notification-message">
+                                Invitation For Mindfire's 19th Anniversary Celebration !
+                              </div>
+                            </div>
+                          
+                        </div>
+                      </div>
+                </div>
+              
+              </li>
+              <li class="nav-item user-profile" *ngIf="user">
+                <div class="dropdown" appDropdown>
+                  <button class="btn btn-secondary dropdown-toggle user-btn" type="button" id="dropdownMenuButton">
+                    <img src="../assets/img/15241392_572339256295877_63901128318243186_n.jpg" class="img-icon" alt="img"/> 
+                    <!-- <img [src]="user.photoURL" class="img-icon" alt="img"/> <span class="user-icon">{{user.photoURL}}</span> -->
+                  </button>
+                  <div class="dropdown-menu user-dropdown">
+                    <li>
+                      <a class="dropdown-item text-center user-name" href="#"><i class="far fa-user"></i>{{user.displayName}}</a>
+                    </li>
+                    
+                    <a class="dropdown-item" href="#">My profile</a>
+                    <a class="dropdown-item" href="#">Change password</a>
+                    <a class="dropdown-item" href="#">Insurance details</a>
+                    <a class="dropdown-item" href="#">Leaves</a>
+                    <a class="dropdown-item" href="#">More setting</a>
+                    <a class="dropdown-item" (click)="onLogOut();" routerLink="/login">Log out</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </nav>
+      </div>
+
+      </nav>
+      
+    </div>
+  </div>
+  
+</header>

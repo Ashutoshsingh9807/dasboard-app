@@ -1,0 +1,23 @@
+<aside class="sidebar" [ngClass]="{'sidebar-show': toggleService.getIsCollapes()}">
+    <nav class="navbar">
+        <ngb-datepicker #d class="datePicker-sidebar"></ngb-datepicker>
+        <!-- Links -->
+        <ul class="navbar-nav sidebar-menu full-width">
+          <!-- Dropdown -->
+          <li class="nav-item dropdown" *ngFor="let key of objectKeys(sidebar_content)" appDropdown>
+            <div *ngIf="isObject(sidebar_content[key])">
+                <a class="nav-link dropdown-toggle text-uppercase">
+                    {{key}} <i class="toogle-sign"></i>
+                </a>
+                <div class="dropdown-menu">
+                    <li class="nav-item" *ngFor="let value of sidebar_content[key]">
+                        <a class="dropdown-item text-capitalize" routerLink="{{value.route}}">{{value.name}}</a>
+                    </li>
+                    
+                </div>
+            </div>
+          </li>
+          
+        </ul>
+      </nav>
+</aside>

@@ -1,0 +1,14 @@
+
+<form #form="ngForm" autocomplete="off" (ngSubmit)="onaddSkill(form)">
+    <div class="form-group mb-0">
+      <input type="hidden" [(ngModel)]="skillService.formData.id" class="form-control" name="id" #id="ngModel">
+      <input type="text" [(ngModel)]="skillService.formData.skillName" class="form-control skill-box" name="skillName" #skillName="ngModel" minlength="2" placeholder="Please enter your skill" required>
+      <div *ngIf="skillName.errors && (skillName.dirty || skillName.touched)" class="text-danger display-small">
+        <span class="custom-alert" [hidden]="!skillName.errors.required">please enter some tag</span>
+        <span class="custom-alert" [hidden]="!skillName.errors.minlength">Please enter atleast 2 Char skills</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn" [disabled]="form.invalid">Add</button>
+    </div>
+  </form>

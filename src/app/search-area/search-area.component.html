@@ -1,0 +1,13 @@
+<div class="search-area" [ngClass]="{'searchbar-opened': toggleService.getIsSearchCollapse()}">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="search-header full-width position-relative">
+          <a class="navbar-brand text-uppercase" href="#">Dashboard</a>
+          <a class="close-icon" (click)="hide_searchbar()"><i class="far fa-times-circle"></i></a>
+      </div>
+      <div class="full-width search-field">
+        <input type="text" class="form-control custom-search-area" placeholder="Type here.." autofocus/>
+      </div>
+    </div>
+  </div>
+</div>

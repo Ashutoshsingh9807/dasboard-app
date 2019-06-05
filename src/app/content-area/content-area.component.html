@@ -1,0 +1,222 @@
+<div class="wrapper-content-area">
+  <div class="container-fluid">
+      <div class="goalsheet-header">
+        <div class="row ml-0 mr-0">
+          <div class="col-12 col-md-4 col-sm-4 goalsheet-user">
+          <h6 class="d-inline"> GoalSheet of :-</h6> <a href="#" class="username">Ashutosh singh</a>
+          </div>
+          <div class="col-12 col-md-8 col-sm-8 tag-list">
+              <app-skill-list></app-skill-list>
+              <app-skills></app-skills>
+          </div>
+      </div> 
+    </div>
+    <div class="goalsheet-workwfh">
+      
+        <div class="row mr-0 ml-0">
+          <div class="col-12 goalsheet-workswith sections-shaow b-radius-10">
+            <div class="col-12 col-md-6 col-sm-6 pl-0">
+                <h6 class="d-inline"> Works with :-</h6> <a href="#" class="username">Amitabh Patnaik</a>
+            </div>
+            <div class="col-12 col-md-6 col-sm-6 text-right pr-0">
+                <p class="d-inline mr-5">{{today | date:'fullDate'}}</p>
+              <input type="checkbox" id="cbx" class="checkbox_check" style="display:none"/>
+              <label for="cbx" class="toggle d-inline-block"><span></span>Work From Home</label>
+            </div>
+          </div>
+         
+        </div>
+      
+    </div>
+    <div class="add_goals"> 
+      
+        <div class="row">
+          <div class=" col-12 custom-col col-md-6 col-sm-6 full-time card sections-shaow b-radius-10 px-0 py-0">
+           
+              <div class="card-header">
+                Full Time on <i class="fas fa-cog float-right"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">
+                  No full time project
+                </p>
+               
+              </div>
+            
+           
+          </div>
+          <div class=" col-12 col-md-6 custom-col col-sm-6 part-time card sections-shaow b-radius-10 px-0 py-0">
+             
+                  <div class="card-header">
+                    Part Time on <i class="fas fa-cog float-right"></i>
+                  </div>
+                  <div class="card-body">
+                    
+                    <p class="card-text">
+                        Rhapsody - UI Designer - Ashutosh (1 HR), PSYBooks - Responsive CSS Designer - Binita/Ashutosh (1 HO), FVF - UI Designer Binita/Ash (1 HO)
+                    </p>
+                   
+                  </div>
+               
+          </div>
+        </div>
+         
+    </div>
+    <div class="add_goals_notes">
+      
+      <div class="row">
+        <div class=" col-12 full-time">
+          <div class="card sections-shaow b-radius-10 px-0 py-0">
+            <table class="table table-hover table-responsive-sm">
+              <thead>
+                <tr>
+                  <th>Status</th>
+                  <th class="goals">Goals</th>
+                  <th>Notes	</th>
+                  <th>Public?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="checkbox" id="goal_1" class="checkbox_check" style="display:none"/>
+                    <label for="goal_1" class="toggle d-inline-block"><span></span></label></td>
+                  <td>Doe</td>
+                  <td><input type="text"  class="form-control"/></td>
+                  <td>
+                    <input type="checkbox" id="public_1" class="checkbox_check" style="display:none" checked/>
+                    <label for="public_1" class="toggle d-inline-block"><span></span></label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox" id="goal_2" class="checkbox_check" style="display:none"/>
+                    <label for="goal_2" class="toggle d-inline-block"><span></span></label></td>
+                  <td>Moe</td>
+                  <td><input type="text"  class="form-control"/></td>
+                  <td><input type="checkbox" id="public_2" class="checkbox_check" style="display:none" checked/>
+                    <label for="public_2" class="toggle d-inline-block"><span></span></label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="checkbox" id="goal_3" class="checkbox_check" style="display:none"/>
+                    <label for="goal_3" class="toggle d-inline-block"><span></span></label></td>
+                  <td>Dooley</td>
+                  <td><input type="text"  class="form-control"/></td>
+                  <td><input type="checkbox" id="public_3" class="checkbox_check" style="display:none" checked/>
+                    <label for="public_3" class="toggle d-inline-block"><span></span></label></td>
+                </tr>
+                <tr>
+                  <td>
+                      <button class="btn" type="submit">Update</button>
+                  </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+              </tbody>
+            </table>
+            
+          </div>
+         
+        </div>
+      </div>
+       
+  </div> 
+    <div class="add_goals">
+      <div class="row">
+          <div class=" col-12 col-md-6 col-sm-6 custom-col card sections-shaow b-radius-10 px-0 py-0">
+           
+              <div class="card-header">
+                  Add Goal for: {{today | date}} <i class="fas fa-cog float-right"></i>
+              </div>
+              <div class="card-body">
+                <textarea class="form-control dasboard-textarea"> </textarea>
+                <button class="btn" type="submit">Add Goals</button>
+              </div>
+            
+           
+          </div>
+          <div class="col-12 col-md-6 custom-col col-sm-6 part-time card sections-shaow b-radius-10 px-0 py-0">
+              
+                  <div class="card-header">
+                    Add Do Today <i class="fas fa-cog float-right"></i>
+                  </div>
+                  <div class="card-body">
+                    
+                      <mat-form-field class="full-width">
+                          <mat-select placeholder="Do Today">
+                            <mat-option *ngFor="let dotoday of dotodays" [value]="dotoday.value">
+                              {{dotoday.viewValue}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                        <button class="btn mt-0" type="submit">Do Today</button>
+                  </div>
+                
+          </div>
+        </div>
+         
+    </div>
+    <div class="add_goals">
+        <div class="row">
+            <div class=" col-12 col-md-8 col-sm-8 custom-col card sections-shaow b-radius-10 px-0 py-0">
+             
+                <div class="card-header">
+                    Actions for Today: <i class="fas fa-cog float-right"></i>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-responsive-sm table-bordered">
+                        <thead>
+                          <tr class="font-weight-normal">
+                            
+                            <th class="goals">Title</th>
+                            <th>Requester	</th>
+                            <th>Responsible</th>
+                            <th>What	</th>
+                            <th>When</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              Something</td>
+                            <td>Something else</td>
+                            <td>Someone</td>
+                            <td>
+                              Someone dude</td>
+                              <td>Some chill</td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Something</td>
+                                <td>Something else</td>
+                                <td>Someone</td>
+                                <td>
+                                  Someone dude</td>
+                                  <td>Some chill</td>
+                          </tr>
+                          
+                          
+                        </tbody>
+                      </table>
+                </div>
+              
+             
+            </div>
+            <div class=" col-12 col-md-4 col-sm-4 custom-col part-time card sections-shaow b-radius-10 px-0 py-0">
+                
+                    <div class="card-header"> 
+                        Comments on the day: <i class="fas fa-cog float-right"></i>
+                    </div>
+                    <div class="card-body">
+                        <textarea class="form-control dasboard-textarea"> </textarea>
+                        <button class="btn" type="submit">Add Note</button>
+                    </div>
+                  
+            </div>
+          </div>
+           
+      </div>
+  </div>
+</div>

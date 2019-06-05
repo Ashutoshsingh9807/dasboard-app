@@ -1,0 +1,116 @@
+<section class="top-all-message-link">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 mt-2">
+        <a class="float-right" routerLink="/message-list">Message List</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="new-message-header">
+  <div class="container-fluid">
+    
+        <input type="hidden"  class="form-control" name="id" >
+        <input type="text"  class="form-control skill-box" name="skillName"  minlength="2" placeholder="Please enter your skill" required>
+      <div class="row">
+        <div class="message-from col-4 col-md-1 d-flex align-items-center">
+          <span>From</span>
+        </div>
+        <div class="message-u-name col-8 col-md-10 pb-2">
+          <a href="#">Ashutosh Singh</a>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="broadcast col-1 d-flex align-items-center">
+          <span class="pr-3">Broadcast</span>
+        </div>
+        <div class="col-11">
+          <mat-slide-toggle (click)="disable_select()">
+          </mat-slide-toggle>
+          <mat-form-field class="pl-3 pr-3" [ngClass]="disable_status ? '' : 'disabele-me'">
+            <mat-select placeholder="Broadcast this message to">
+              <mat-option  *ngFor="let messageName of messageto" [value]="messageName.value">
+                {{messageName.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <span>[This will broadcast the message after an approval process]</span>
+        </div>
+      </div>
+      <div class="row selected-people-message" *ngIf="disable_status === 'true' || !disable_status">
+          <div class="send-to col-1">
+            To:
+          </div>
+          <div class="col-11" >
+            <div class="col-12 pl-0">
+              <mat-radio-group class="tp-radio-group" [(ngModel)] ="broadcastTo">
+                <mat-radio-button name="options" class = "tp-radio-button"
+                  *ngFor = "let broadcast of broadcasts" [value] = "broadcast">
+                  {{broadcast}}   
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="col-12 pl-0">
+                <div *ngIf="broadcastTo == 'Selected people' || !broadcastTo" class="form-group">
+
+                  <div class="form-control h-auto" style="min-height:150px;">
+                    <ul class="list-group">
+                      <li class="list-group-item list-group-item-action" *ngFor="let user of usersId">
+                        {{user.name}} <a class="delete-user float-right" (click)="onRemoveUser()"><i class="fas fa-trash-alt"></i></a>
+                      </li>
+                    </ul>
+                    
+                  </div>
+                  
+                  <div class="col-12 mt-2 pl-0">
+                    <input class="form-control" [(ngModel)]="addUser" placeholder="Type user Id's" type="text"/>
+                    <button class="btn btn-new-message mt-2" (click)="onAddUser()" type="submit">Add User</button>
+                  </div>
+                </div>
+            </div>
+            <section>
+              
+            </section>
+          </div>
+        </div>
+      <div class="row">
+          <div class="col-1">
+            </div>
+            <div class="col-11">
+              <input type="checkbox" id="fututre-member" class="checkbox_check" style="display:none"/>
+              <label for="fututre-member" class="toggle d-inline-block cursor-pointer"><span></span>Show this message to future member</label>
+            
+          </div>
+        </div>
+      <hr>
+      <div class="row">
+        <div class="col-1 d-flex align-items-center">
+          Subject:
+        </div>
+        <div class="col-11">
+            <input type="text" placeholder="Please enter your subject" class="form-control"/>
+        </div>
+      </div>
+      <div class="row pt-3">
+          <div class="col-1">
+            Message:
+          </div>
+          <div class="col-11">
+              <textarea placeholder="Please enter your Message" rows="10" class="form-control mb-2"> </textarea>
+              <input type="checkbox" id="send-message" class="checkbox_check" style="display:none"/>
+              <label for="send-message" class="toggle d-inline-block cursor-pointer"><span></span>Send email about message</label>
+              
+          </div>
+      </div>
+      <div class="row pt-3">
+          <div class="col-1">
+          
+          </div>
+          <div class="col-11">
+            <button class="btn btn-new-message mt-2" type="submit">Send</button>
+          </div>
+      </div>
+    
+  </div>
+</section>

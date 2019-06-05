@@ -1,0 +1,59 @@
+.wrapper-content-area {
+    padding: 40px 0px;
+}
+.goalsheet-header .goalsheet-user a, .goalsheet-workwfh .goalsheet-workswith a {
+    color: #444;
+    margin-left: 10px;
+}
+.goalsheet-header .goalsheet-user h6, .goalsheet-workwfh .goalsheet-workswith h6 {
+    margin-bottom: 0px;
+}
+.wrapper-content-area .goalsheet-header .tag-list ul li {
+    display: inline-block;
+}
+.wrapper-content-area .goalsheet-header {
+    border-bottom: 1px solid #dddddd;
+    padding: 0px 5px 5px 5px;
+}
+
+.wrapper-content-area .goalsheet-header .goalsheet-user, .goalsheet-workwfh .goalsheet-workswith {
+    display: flex;
+    align-items: center;
+}
+  
+button.btn {
+  background-color: #53297c;
+  border-radius: 40px;
+  color: #fff;
+  margin-top: 10px;
+  padding: 3px 14px;
+  font-size: 14px;
+  cursor: pointer;
+} 
+    .add_goals_notes .table thead th.goals {
+      min-width: 450px;
+  }
+  .custom-col {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .custom-col.col-md-6 {
+    flex: 0 0 50%;
+    max-width:calc(50% - 30px);
+  }
+  .custom-col.col-md-8 {
+    flex: 0 0 66.666667%;
+    max-width:calc(66.666667% - 30px);
+  }
+  .custom-col.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width:calc(33.333333% - 30px);
+  }
+  .add_goals .table-bordered thead tr th {
+    font-weight: 500;
+  }
+  .add_goals .table-bordered th,   .add_goals .table-bordered td {
+    font-size: 14px;
+  }
+ 
+
