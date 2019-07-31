@@ -6,6 +6,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { HttpClient } from '@angular/common/http';
 import {registerService} from '../register.service';
 import {registerModel} from '../register.model';
+import {AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask} from '@angular/fire/storage';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 
 @Component({
@@ -14,11 +17,20 @@ import {registerModel} from '../register.model';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
+  ref: AngularFireStorageReference;
+  task: AngularFireUploadTask;
+  uploadState: Observable<string>;
+  // uploadProgress: Observable<number>;
+  uplaodwidth: number;
+  downloadURL: string;
   dashboard = 'Dashboard';
   errorMessage: string = '';
   selectedFile = null;
+
   // user_details:registerModel[];
-  constructor(private authservice:authService, private RegisterService:registerService, private http:HttpClient, private toastr:ToastrService, private firestore:AngularFirestore) { }
+  constructor(private authservice:authService, private RegisterService:registerService, private http:HttpClient, private toastr:ToastrService, 
+    private firestore:AngularFirestore, private storage: AngularFireStorage) { }
 
   ngOnInit() {
    
@@ -38,15 +50,31 @@ export class RegisterComponent implements OnInit {
       email:''
     }
   }
-  onFileSelected(event) { 
-    this.selectedFile =event.target.files[0]; 
+  upload_icon(event) {
+    const id = Math.random().toString(36).substring(2);
+    this.ref = this.storage.ref(id);
+    this.task = this.ref.put(event.target.files[0]);
+    this.uploadState = this.task.snapshotChanges().pipe(map(s => s.state));
+    this.task.percentageChanges().subscribe((data) => {
+      this.uplaodwidth = data;   
+      if(this.uplaodwidth == 100) {
+       this.ref.getDownloadURL().subscribe((data) => {
+        this.downloadURL = data;
+        });
+      }
+    })       
   }
+
+
   onRegister(form:NgForm) {
-    this.authservice.registerUser(form.value);
+    form.value['user_icon'] = this.downloadURL;
+    this.authservice.registerUser(form.value);  
     if(form.value.id == null) {
     this.toastr.success('Details added Successfully');
+    this.resetForm();
   } 
 }
+
 }
 
       

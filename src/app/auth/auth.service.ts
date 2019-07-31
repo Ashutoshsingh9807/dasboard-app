@@ -1,9 +1,10 @@
 import { Router } from '@angular/router';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+
 
 
 
@@ -16,11 +17,15 @@ export class authService {
     errorMessageSubject = new BehaviorSubject<string>('');
     errorMessage$ = this.errorMessageSubject.asObservable();
 
-    constructor (private router:Router, private afAuth:AngularFireAuth, private db:AngularFirestore) {}
+    constructor (private router:Router, private afAuth:AngularFireAuth, private db:AngularFirestore) {
+         
+    }
+   
     
     getUser() {
-       return this.afAuth.authState;
+       return this.afAuth.authState;   
     }
+    
     loginUser(email:string, password:string){
         
         this.afAuth.auth.signInWithEmailAndPassword(email, password)

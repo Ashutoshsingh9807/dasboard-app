@@ -8,6 +8,9 @@
         <span class="custom-alert" [hidden]="!skillName.errors.minlength">Please enter atleast 2 Char skills</span>
       </div>
     </div>
+    <!-- <a href="#" class="btn btn-primary" *ngFor="let skill of skillsList">
+      {{skill.name}}
+    </a> -->
     <div class="form-group">
       <button type="submit" class="btn" [disabled]="form.invalid">Add</button>
     </div>

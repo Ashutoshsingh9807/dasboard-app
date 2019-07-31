@@ -11,6 +11,8 @@ import { ToastrModule } from 'ngx-toastr';
 import {HttpClientModule} from '@angular/common/http';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFireStorage} from '@angular/fire/storage';
+
 
 
 
@@ -35,6 +37,7 @@ import { MatTableModule, MatPaginatorModule, MatSortModule, MatSlideToggleModule
 import { AuthGuard } from './auth/auth-guard.service';
 import { NewMessageComponent } from './message/new-message/new-message.component';
 import {registerService} from './auth/register.service';
+import { TestingCloudstorageComponent } from './testing-cloudstorage/testing-cloudstorage.component';
 
 
 @NgModule({ 
@@ -52,6 +55,7 @@ import {registerService} from './auth/register.service';
     SkillListComponent,
     MessageTableComComponent,
     NewMessageComponent,
+    TestingCloudstorageComponent,
 
     
   ],
@@ -74,7 +78,7 @@ import {registerService} from './auth/register.service';
     MatSlideToggleModule, MatCheckboxModule,AngularFireDatabaseModule,
    
   ],
-  providers: [ToggleService, skillsService, authService, AuthGuard, registerService, AngularFireAuth],
+  providers: [ToggleService, skillsService, authService, AuthGuard, registerService, AngularFireAuth, AngularFireStorage],
   bootstrap: [AppComponent]
 })
-export class AppModule { }     
+export class AppModule { }      

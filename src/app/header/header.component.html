@@ -103,15 +103,15 @@
                 </div>
               
               </li>
-              <li class="nav-item user-profile" *ngIf="user">
+              <li class="nav-item user-profile" *ngIf="!!userDetails">
                 <div class="dropdown" appDropdown>
                   <button class="btn btn-secondary dropdown-toggle user-btn" type="button" id="dropdownMenuButton">
-                    <img src="../assets/img/15241392_572339256295877_63901128318243186_n.jpg" class="img-icon" alt="img"/> 
-                    <!-- <img [src]="user.photoURL" class="img-icon" alt="img"/> <span class="user-icon">{{user.photoURL}}</span> -->
+                    <img src="{{userDetails.user_icon}}" class="img-icon" alt="img"/> 
+                    <!-- <span class="user-icon">{{user.email}}</span> -->
                   </button>
                   <div class="dropdown-menu user-dropdown">
                     <li>
-                      <a class="dropdown-item text-center user-name" href="#"><i class="far fa-user"></i>{{user.displayName}}</a>
+                      <a class="dropdown-item text-center user-name" href="#"><i class="far fa-user"></i>{{userDetails.name}}</a>
                     </li>
                     
                     <a class="dropdown-item" href="#">My profile</a>

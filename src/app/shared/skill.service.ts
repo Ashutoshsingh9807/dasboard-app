@@ -6,8 +6,8 @@ import {FirebaseListObservable} from '@angular/fire/database-deprecated';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 
 export class Skill {
-    body: string;
-    userId: string;
+    skillName: string;
+    id: string;
   } 
 
 @Injectable ({
@@ -21,6 +21,7 @@ export class skillsService {
     constructor(private firestore:AngularFirestore, private afAuth:AngularFireAuth, private db:AngularFireDatabase) {
         this.afAuth.authState.subscribe(user => {
             if(user) this.userId = user.uid
+            console.log(user);
           })
     }
     getskill() {
@@ -32,9 +33,13 @@ export class skillsService {
          
         // this.skills = this.db.list(`skills/`);
         return this.skills
-      } 
+        
+      }
+      
+
+      
       addSkills(skill: Skill) {
-        skill.userId = this.userId
+        skill.id = this.userId
         this.skills.push(skill);
       }
 } 

@@ -1,4 +1,4 @@
 export class skillModel {
-    skillName:string;
-    id:string;
+    constructor( public skillName:string, public id:string) {
+    }
 }

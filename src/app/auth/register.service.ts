@@ -13,6 +13,6 @@ export class registerService {
 
     }
     // getuser_data() {
-    //     return this.firestore.collection('user_registration').snapshotChanges();
+    //     return this.firestore.collection('users').doc(userkey).snapshotChanges();
     //   } 
 }

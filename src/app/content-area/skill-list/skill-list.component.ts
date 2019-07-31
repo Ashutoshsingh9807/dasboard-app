@@ -14,6 +14,7 @@ export class SkillListComponent implements OnInit {
 
   list:skillModel[];
   usersskill;
+  skillsList;
   constructor(private skillService:skillsService,  private firestore:AngularFirestore, private toastr:ToastrService) { }
 
   ngOnInit() {
@@ -24,6 +25,13 @@ export class SkillListComponent implements OnInit {
     //       ...item.payload.doc.data()} as skillModel;
     //   })
     // });
+    this.skillsList = [
+      {name:'css'},
+      {name:'html'},
+      {name:'JS'},
+      {name:'Angular'},
+      {name:'TS'}
+    ]
     this.skillService.getskill() 
       .subscribe( user => {
         this.usersskill = user;

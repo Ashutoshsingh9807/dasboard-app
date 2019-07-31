@@ -6,6 +6,7 @@ import { AuthGuard } from "./auth/auth-guard.service";
 import { NewMessageComponent } from "./message/new-message/new-message.component";
 import { ContentAreaComponent } from "./content-area/content-area.component";
 import { MessageTableComComponent } from "./message/message-table-com/message-table-com.component";
+import { TestingCloudstorageComponent } from "./testing-cloudstorage/testing-cloudstorage.component";
 
 
 
@@ -13,6 +14,7 @@ const appRoutes:Routes = [
     {path: '', redirectTo: '/login', pathMatch:'full'},
     {path: 'login', component:LoginComponent},
     {path: 'register', component:RegisterComponent},
+    {path: 'image_testing', component:TestingCloudstorageComponent},
     {path:'home', component: ContentAreaComponent, canActivate:[AuthGuard]},
     {path:'message-list', component:MessageTableComComponent, canActivate:[AuthGuard]},
     {path:'new-message', component:NewMessageComponent, canActivate:[AuthGuard]},
